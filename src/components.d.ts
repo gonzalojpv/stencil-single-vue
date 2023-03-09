@@ -22,6 +22,10 @@ export namespace Components {
     }
     interface MyModal {
     }
+    interface MyVue {
+        "message": string;
+        "title": string;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -36,9 +40,16 @@ declare global {
         prototype: HTMLMyModalElement;
         new (): HTMLMyModalElement;
     };
+    interface HTMLMyVueElement extends Components.MyVue, HTMLStencilElement {
+    }
+    var HTMLMyVueElement: {
+        prototype: HTMLMyVueElement;
+        new (): HTMLMyVueElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "my-modal": HTMLMyModalElement;
+        "my-vue": HTMLMyVueElement;
     }
 }
 declare namespace LocalJSX {
@@ -58,9 +69,14 @@ declare namespace LocalJSX {
     }
     interface MyModal {
     }
+    interface MyVue {
+        "message"?: string;
+        "title"?: string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "my-modal": MyModal;
+        "my-vue": MyVue;
     }
 }
 export { LocalJSX as JSX };
@@ -69,6 +85,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "my-modal": LocalJSX.MyModal & JSXBase.HTMLAttributes<HTMLMyModalElement>;
+            "my-vue": LocalJSX.MyVue & JSXBase.HTMLAttributes<HTMLMyVueElement>;
         }
     }
 }

@@ -14,10 +14,20 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "jsx": "react",
-    "jsxFactory": "h"
+    "jsxFactory": "h",
+    "types": [
+      "vue"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ]
   },
   "include": [
-    "src"
+    "src",
+     "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.vue"
   ],
   "exclude": [
     "node_modules"
