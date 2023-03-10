@@ -13,7 +13,6 @@ defineProps({
 
 <template>
   <div class="vue-component">
-    Form Vu3
     <h1>{{ title }}</h1>
     <p>{{ message }}</p>
   </div>
